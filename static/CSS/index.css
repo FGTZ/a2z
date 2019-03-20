@@ -1,0 +1,19 @@
+
+.jumbotron{
+	margin-bottom: 0px;
+}
+
+.navbar{
+	margin-bottom: 0px;
+	background-color: #337ab7;
+}
+.navbar-inverse{
+	background-color: #337ab7;
+	border-color: #337ab7;
+}
+
+.navbar .navbar-nav>li>a{
+	color: #f5efef;
+	font-weight: 600;
+	font-size: 18px;
+}

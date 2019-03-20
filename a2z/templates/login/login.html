@@ -1,0 +1,41 @@
+{% extends 'a2z/base.html' %}
+{% load staticfiles %}
+{% block title %}login{% endblock %}
+
+{% block content %}
+    <div class="container" style="margin-top: 80px;margin-bottom: 250px;">
+  	    <div class="row col-lg-5" style="margin-top: 2%;">
+            <form class="form-login" action="/login/" method="post">
+                {% if message %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                {% endif %}
+
+                {% csrf_token %}
+                <h2 class="text-center">Please sign in</h2>
+                {{ login_form }}
+                <button type="reset" class="btn btn-default pull-left">Reset your password.</button>
+                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            </form>
+        </div>
+        <div class="row col-lg-2"></div>
+        <div class="row col-lg-5">
+            <form class="form-login">
+                {% csrf_token %}
+                <h2 class="form-login-heading">Don't have account?</h2>
+                <p style="font-size: 18px;">Please fill in this form to create an account.</p>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="repeatPassword" class="sr-only">Repeat Password</label>
+                <input type="repeatpassword" id="repeatPassword" class="form-control" placeholder="RepeatPassword" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 25px;">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="jumbotron text-center" style="margin-bottom:0; margin-top: 15px;">
+        <p>&copy; 2019 Company, Inc.</p>
+    </div>
+{% endblock %}
+
